@@ -260,7 +260,7 @@ def authenticate(request, *args, **kwargs):
     """
     password = kwargs.pop("password", None)
 
-    if settings_prefix := kwargs.pop("prefix"):
+    if settings_prefix := kwargs.pop("prefix", None):
         settings.set_or_clear_prefix(settings_prefix)
     else:
         settings.set_or_clear_prefix()
